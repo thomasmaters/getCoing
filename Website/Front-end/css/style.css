@@ -1,0 +1,16 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    padding:30px;
+    background-color: #283593;
+    color:white;
+    font-weight: 700;
+
+}
+
+.header .container {
+    padding:48px;
+    font-size: 30px;
+}
