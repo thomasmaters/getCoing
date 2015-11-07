@@ -58,17 +58,39 @@ h3 {
     margin:0px;
     padding-top: 30px;
     color:white;
-    font-size:30px ;
+    font-size:35px ;
 }
 
 .information h2{
     font-weight: 400;
     color:#454545;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .footer {
-    background-color: #ECEFF1;
+    background-color:#1D6157;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.footer h4 {
+    text-align:center;
+    margin:0;
+    padding:20px;
+    color:white;
+
+}
+
+.footer-top {
+
+}
+
+.footer-top h4{
+
+    text-align:center;
+    padding:20px;
+    color:white;
+    padding-bottom:0px;
 }
 
 /* Inputs */
@@ -88,6 +110,14 @@ input {
 
 input:focus {
     outline: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }
 
 /* LABEL ======================================= */
