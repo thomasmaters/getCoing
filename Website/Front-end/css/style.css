@@ -49,6 +49,28 @@ h3 {
     margin: auto;
 }
 
+.information {
+    background-color:#26a69a;
+}
+
+.information h3{
+    text-align: center;
+    margin:0px;
+    padding-top: 30px;
+    color:white;
+    font-size:30px ;
+}
+
+.information h2{
+    font-weight: 400;
+    color:#454545;
+    font-size: 30px;
+}
+
+.footer {
+    background-color: #ECEFF1;
+}
+
 /* Inputs */
 .group {
     position: relative;
