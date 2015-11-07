@@ -13,7 +13,8 @@ function sendMessage($header,$msg,$phone)
 
 	try {
 		$MessageResult = $MessageBird->messages->create($Message);
-		var_dump($MessageResult);
+		//var_dump($MessageResult);
+		echo "SUCCES";
 
 	} catch (\MessageBird\Exceptions\AuthenticateException $e) {
 		echo 'wrong login';
