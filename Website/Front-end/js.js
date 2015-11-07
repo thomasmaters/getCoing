@@ -1,14 +1,14 @@
 <script>
-    $("#nav-Behandelingen").click(function() {
+    $("#formu").click(function() {
         $('html, body').animate({
             scrollTop: $("#behandelingen").offset().top - 120
         }, 500);
     });
-    $("#label").click(function(){
-        $("#test").hide();
+    $("#formu").click(function(){
+        $("#group").hide();
     });
     $("#show").click(function(){
-        $("#test").show();
+        $("#group").show();
     });
     
     
