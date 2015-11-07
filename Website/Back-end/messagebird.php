@@ -7,7 +7,7 @@ $MessageBird = new \MessageBird\Client('test_g13ekVBi5JskLaLa8AZ4htt3j'); // Set
 $Message             = new \MessageBird\Objects\Message();
 $Message->originator = 'MessageBird';
 $Message->recipients = array(31642065406);
-$Message->body = 'Tasfdoiughasdfiugaoshflk.';
+$Message->body = '';
 
 try {
     $MessageResult = $MessageBird->messages->create($Message);
