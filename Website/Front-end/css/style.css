@@ -3,8 +3,8 @@
 }
 
 .header {
-    padding: 30px;
-    background-color: #283593;
+    padding: 0px 30px 30px;
+    background-color: #26a69a;
     color: white;
     font-weight: 700;
 
@@ -17,30 +17,36 @@
 
 small {
     fontsize: 25px;
-    color: #AFAFAF;
+    color: #454545;
     font-weight: 400;
 }
 
 .main-content {
     background-color: #ECEFF1;
-    margin-bottom: 10px;
+    padding: 10px;
 }
 
 h2 {
-    text-align:center;
+    text-align: center;
     font-size: 30px;
     margin-bottom: 20px;
     font-weight: 700;
+    color: #454545;
 }
 
 h1 {
     font-weight: 400;
-    font-size:25px;
+    font-size: 25px;
 }
 
 h3 {
     font-size: 45px;
     font-weight: 700;
+}
+
+.formu {
+    width: 400px;
+    margin: auto;
 }
 
 /* Inputs */
@@ -80,7 +86,7 @@ label {
 input:focus ~ label, input:valid ~ label {
     top: -20px;
     font-size: 14px;
-    color: #5264AE;
+    color: #26a69a;
 }
 
 /* BOTTOM BARS ================================= */
@@ -96,7 +102,7 @@ input:focus ~ label, input:valid ~ label {
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #5264AE;
+    background: #26a69a;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -136,7 +142,7 @@ input:focus ~ .highlight {
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
     from {
-        background: #5264AE;
+        background: #26a69a;
     }
     to {
         width: 0;
@@ -146,7 +152,7 @@ input:focus ~ .highlight {
 
 @-moz-keyframes inputHighlighter {
     from {
-        background: #5264AE;
+        background: #26a69a;
     }
     to {
         width: 0;
@@ -156,7 +162,7 @@ input:focus ~ .highlight {
 
 @keyframes inputHighlighter {
     from {
-        background: #5264AE;
+        background: #26a69a;
     }
     to {
         width: 0;
