@@ -1,22 +1,11 @@
 <script>
 $(document).ready(function(){
-    
-    $("#formu").click(function(){
-        $("#group").hide();
+
+    $(".formu").click(function(){
+        $(".group").hide();
     });
-    $("#show").click(function(){
-        $("#group").show();
-    });
-    
-    
-    $('.slidedown').click(function(){
-        var id = '#' + this.id + '-collapse';
-        var collapse = $(id).css('display');
-        if(collapse == 'block'){
-            $(id).slideUp();
-        } else {
-            $(id).slideDown();
-        }
+    $(".show").click(function(){
+        $(".group").show();
     });
     
 });
