@@ -1,13 +1,13 @@
 <?php
 
-require_once(__DIR__ . '/autoload.php');
+require_once(__DIR__ . '/../autoload.php');
 
-$MessageBird = new \MessageBird\Client('test_g13ekVBi5JskLaLa8AZ4htt3j'); // Set your own API access key here.
+$MessageBird = new \MessageBird\Client('YOUR_ACCESS_KEY'); // Set your own API access key here.
 
 $Message             = new \MessageBird\Objects\Message();
 $Message->originator = 'MessageBird';
-$Message->recipients = array(31642065406);
-$Message->body = 'Tasfdoiughasdfiugaoshflk.';
+$Message->recipients = array(31612345678);
+$Message->body = 'This is a test message.';
 
 try {
     $MessageResult = $MessageBird->messages->create($Message);
