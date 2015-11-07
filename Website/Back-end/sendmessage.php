@@ -19,7 +19,7 @@
 
 			if($row['password'] == $psw)
 			{
-				sendMessage('Mooieheader','Uw bidcoin',(int)$row['cellphone']);
+				sendMessage('getCoing',$msg,(int)$row['cellphone']);
 			}
 		}
 	}
