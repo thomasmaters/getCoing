@@ -1,9 +1,6 @@
 <script>
-    $("#formu").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#behandelingen").offset().top - 120
-        }, 500);
-    });
+$(document).ready(function(){
+    
     $("#formu").click(function(){
         $("#group").hide();
     });
