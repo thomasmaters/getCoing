@@ -11,7 +11,7 @@
 				$phone = $_GET['phone'];
 				preg_replace('/(-)+/', '', $phone);
 				preg_replace('/[a-zA-Z]+/', '', $phone);
-				preg_replace('/[(\+)+/', '', $phone);
+				preg_replace('/[(\+)]+/', '', $phone);
 				if(!preg_match('/[0-9]{10,20}+/', $phone)){echo '{"response": "INVALID_PHONE"}';}
 				
 				$info = getConnectionInfo();
@@ -19,7 +19,7 @@
 				if($conn != false)
 				{
 					echo 'helemaal mooi';
-					$stmt = $conn->prepare("INSERT INTO user(username,password,cellphone,email) VALUES('".$_GET['user']."','".$_GET['psw']."','".$phone."','".$_GET['email']."') "); 
+					$stmt = $conn->prepare("INSERT INTO user(id,username,password,cellphone,email) VALUES(59,'".$_GET['user']."','".$_GET['psw']."','".$phone."','".$_GET['email']."') "); 
 					$stmt->execute(); 
 				}
 			}
