@@ -2,13 +2,13 @@
 	include 'connect_db.php';
 	function register()
 	{
-		if(	isset($_GET['user']) && isset($_GET['psw']) && isset($_GET['phone']) && isset($_GET['bitcoin']) && isset($_GET['email']) &&
-			!empty($_GET['user']) && !empty($_GET['psw']) && !empty($_GET['phone']) && !empty($_GET['bitcoin']) && !empty($_GET['email']))
+		if(	isset($_POST['user']) && isset($_POST['psw']) && isset($_POST['phone']) && isset($_POST['bitcoin']) && isset($_POST['email']) &&
+			!empty($_POST['user']) && !empty($_POST['psw']) && !empty($_POST['phone']) && !empty($_POST['bitcoin']) && !empty($_POST['email']))
 			{
-				if(!preg_match('/[a-zA-Z]+/', $_GET['user'])){echo '{"response": "INVALID_USERNAME"}';}
-				if(preg_match('/[[:punct:]]/', $_GET['bitcoin'])){echo '{"response": "INVALID_BITCOIN"}';}
-				if(!filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)){echo '{"response": "INVALID_EMAIL"}';}
-				$phone = $_GET['phone'];
+				if(!preg_match('/[a-zA-Z]+/', $_POST['user'])){echo '{"response": "INVALID_USERNAME"}';}
+				if(preg_match('/[[:punct:]]/', $_POST['bitcoin'])){echo '{"response": "INVALID_BITCOIN"}';}
+				if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){echo '{"response": "INVALID_EMAIL"}';}
+				$phone = $_POST['phone'];
 				preg_replace('/(-)+/', '', $phone);
 				preg_replace('/[a-zA-Z]+/', '', $phone);
 				preg_replace('/[(\+)]+/', '', $phone);
@@ -18,11 +18,13 @@
 				$conn = new PDO($info[0],$info[1],$info[2]);
 				if($conn != false)
 				{
-					echo 'helemaal mooi';
-					$stmt = $conn->prepare("INSERT INTO user(id,username,password,cellphone,email) VALUES(59,'".$_GET['user']."','".$_GET['psw']."','".$phone."','".$_GET['email']."') "); 
-					$stmt->execute(); 
+					echo 'true';
+					$stmt = $conn->prepare("INSERT INTO user(id,username,password,cellphone,email) VALUES(59,'".$_POST['user']."','".$_POST['psw']."','".$phone."','".$_POST['email']."') "); 
+					$stmt->execute();
+					return;
 				}
 			}
 	}
+	echo 'false';
 	register();
 ?>

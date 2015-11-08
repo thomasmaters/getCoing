@@ -17,12 +17,13 @@
 					$row = $stmt->fetch();
 					if(isset($_SESSION['user']))
 					{
-						echo 'username already set';
+						echo 'false';
 					}
 					if($row['password'] == $_POST['psw'] && $row['username'] == $_POST['user'])
 					{
 						$_SESSION['user'] = $_POST['user'];
 						echo 'true';
+						return;
 					}
 					else
 					{
