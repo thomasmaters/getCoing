@@ -6,8 +6,8 @@ $(document).ready(function () {
         $("#loginModal .error").css('display', 'none', 'important');
         $.ajax({
             type: "POST",
-            url: "login.php",
-            data: "user=" + username + "&pwd=" + password,
+            url: "Back-end/login.php",
+            data: "user=" + username + "&psw=" + password,
             success: function (html) {
                 if (html == 'true') {
                     window.location = "profile.php";
@@ -32,8 +32,8 @@ $(document).ready(function () {
         $("#registerModal .error").css('display', 'none', 'important');
         $.ajax({
             type: "POST",
-            url: "register.php",
-            data: "user=" + username + "&pwd=" + password + "&phone=" + phone + "&email=" + email,
+            url: "Back-end/register.php",
+            data: "user=" + username + "&psw=" + password + "&phone=" + phone + "&email=" + email,
             success: function (html) {
                 console.log(html);
                 if (html == 'true') {
