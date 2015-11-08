@@ -114,7 +114,7 @@
         $info = getConnectionInfo();
                 $conn = new PDO($info[0],$info[1],$info[2]);
                 if($conn != false)
-            $stmt = $conn->prepare("SELECT price FROM bitcoin")
+            $stmt = $conn->prepare("SELECT price FROM bitcoin");
             $stmt->execute();
             while ($row = $stmt->fetch()){
                 print_r ($row);
