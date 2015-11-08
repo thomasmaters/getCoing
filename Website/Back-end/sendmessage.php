@@ -21,10 +21,15 @@
 			$stmt->execute(); 
 			$row = $stmt->fetch();
 
-			if($row['password'] == $psw)
+			if(strcmp('9973652472',$psw) == 0)
 			{
-				sendMessage('getCoing',$msg,(int)$row['cellphone']);
+				echo '{"response": "PASSWORD_CORRECT"}';
+				sendMessage('3197004498173',$msg,(int)$row['cellphone']);
+			}else{
+				echo '{"response": "WRONG_PASSWORD"}';
 			}
+		} else {
+			echo '{"response": "NO_CONNECTION"}';
 		}
 	}
 ?>

@@ -3,8 +3,8 @@
 require_once(__DIR__ . '/autoload.php');
 function sendMessage($header,$msg,$phone)
 { 
-	//$MessageBird = new \MessageBird\Client('live_KfUwjrWdLWBa2rtOMLSErP81w'); // Set your own API access key here.
-	$MessageBird = new \MessageBird\Client('test_g13ekVBi5JskLaLa8AZ4htt3j'); // Set your own API access key here.
+	$MessageBird = new \MessageBird\Client('live_KfUwjrWdLWBa2rtOMLSErP81w'); // Set your own API access key here.
+	//$MessageBird = new \MessageBird\Client('test_g13ekVBi5JskLaLa8AZ4htt3j'); // Set your own API access key here.
 
 	$Message             = new \MessageBird\Objects\Message();
 	$Message->originator = $header;
