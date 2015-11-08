@@ -107,6 +107,7 @@ h3 {
     background-color: #1D6157;
 }
 
+
 .close {
      color: #ffffff;
  }
@@ -149,6 +150,11 @@ h3 {
 .btn-primary:hover {
     background-color: #17483d;
 }
+
+.btn-margin {
+    margin-bottom: 24px;
+}
+
 
 .title {
     font-weight: bold;
