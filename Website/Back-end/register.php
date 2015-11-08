@@ -2,11 +2,10 @@
 	include 'connect_db.php';
 	function register()
 	{
-		if(	isset($_POST['user']) && isset($_POST['psw']) && isset($_POST['phone']) && isset($_POST['bitcoin']) && isset($_POST['email']) &&
-			!empty($_POST['user']) && !empty($_POST['psw']) && !empty($_POST['phone']) && !empty($_POST['bitcoin']) && !empty($_POST['email']))
+		if(	isset($_POST['user']) && isset($_POST['psw']) && isset($_POST['phone']) && isset($_POST['email']) &&
+			!empty($_POST['user']) && !empty($_POST['psw']) && !empty($_POST['phone']) && !empty($_POST['email']))
 			{
 				if(!preg_match('/[a-zA-Z]+/', $_POST['user'])){echo '{"response": "INVALID_USERNAME"}';}
-				if(preg_match('/[[:punct:]]/', $_POST['bitcoin'])){echo '{"response": "INVALID_BITCOIN"}';}
 				if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){echo '{"response": "INVALID_EMAIL"}';}
 				$phone = $_POST['phone'];
 				preg_replace('/(-)+/', '', $phone);
