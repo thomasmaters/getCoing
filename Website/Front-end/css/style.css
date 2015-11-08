@@ -74,6 +74,9 @@ h3 {
 .information {
     background-color: #26a69a;
 }
+.contrast {
+    color: #ffffff;
+}
 
 .footer {
     background-color: #1D6157;
@@ -149,6 +152,14 @@ h3 {
 
 .title {
     font-weight: bold;
+    font-size: 72px;
+}
+
+.title i {
+    font-size: 80px;
+    -ms-transform: translate(-2px,0px); /* IE 9 */
+    -webkit-transform: translate(-2px,0px); /* Safari */
+    transform: translate(-2px,0px);
 }
 
 /* Inputs */
