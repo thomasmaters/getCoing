@@ -64,7 +64,7 @@ h3 {
 .information h2{
     font-weight: 400;
     color:#454545;
-    font-size: 25px;
+    font-size: 1.5em;
 }
 
 .footer {
@@ -85,9 +85,17 @@ h3 {
 .footer-top h4{
 
     text-align:center;
-    padding:20px;
     color:white;
-    padding-bottom:0px;
+    padding: 20px 20px 0px;
+}
+
+.form-button {
+    color:white;
+    border: solid 1px #1D6157;
+    border-radius: 10px;
+    background-color:#1D6157 ;
+    margin-bottom: 35px;
+    font-size : 22px;
 }
 
 /* Inputs */
