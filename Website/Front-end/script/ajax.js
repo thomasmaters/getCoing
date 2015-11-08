@@ -1,54 +1,43 @@
 $(document).ready(function () {
     $("#login_btn").click(function () {
-        var username = $("#username_login").val();
-        var password = $("#password_login").val();
-        console.log("Logging in");
         $("#loginModal .error").css('display', 'none', 'important');
-        $.ajax({
-            type: "POST",
-            url: "Back-end/login.php",
-            data: "user=" + username + "&psw=" + password,
-            success: function (html) {
-                if (html == 'true') {
-                    window.location = "profile.php";
-                    return true;
-                }
-                else {
-                    $("#loginModal .error").css('display', 'block', 'important');
-                }
-            }
-        });
+        var post_data = {
+            'user'        : $("#username_login").val(),
+            'psw'      : $("#password_login").val()
+        };
 
-        $("#registerModal .error").css('display', 'block', 'important');
+        $.post('/Back-end/login.php', post_data, function(response) {
+            console.log(response);
+            if(response.type == 'error'){
+                $("#loginModal .error").css('display', 'block', 'important');
+            } else {
+                $("#loginModal .error").css('display', 'none', 'important');
+                $('#loginModal').modal('hide');
+                $(location).attr('href', 'http://hackathon.egordmitriev.net/profile.php')
+            }
+        }, 'json');
         return false;
     });
 
     $("#signup_btn").click(function () {
-        var username = $("#username_register").val();
-        var password = $("#password_register").val();
-        var email = $("#email_register").val();
-        var phone = $("#phone_register").val();
-        console.log("Signing up");
         $("#registerModal .error").css('display', 'none', 'important');
-        $.ajax({
-            type: "POST",
-            url: "Back-end/register.php",
-            data: "user=" + username + "&psw=" + password + "&phone=" + phone + "&email=" + email,
-            success: function (html) {
-                console.log(html);
-                if (html == 'true') {
-                    window.location = "profile.php";
-                    return true;
-                }
-                else {
-                    $("#registerModal .error").css('display', 'block', 'important');
-                }
-            }
-        });
+        var post_data = {
+            'user'        : $("#username_register").val(),
+            'psw'      : $("#password_register").val(),
+            'email'           : $("#email_register").val(),
+            'phone'       : $("#phone_register").val()
+        };
 
-        $("#registerModal .error").css('display', 'block', 'important');
+        $.post('/Back-end/register.php', post_data, function(response) {
+            console.log(response);
+            if(response.type == 'error'){
+                $("#registerModal .error").css('display', 'block', 'important');
+            } else {
+                $("#registerModal .error").css('display', 'none', 'important');
+                $('#registerModal').modal('hide');
+                $(location).attr('href', 'http://hackathon.egordmitriev.net/profile.php')
+            }
+        }, 'json');
         return false;
     });
-
-
 });

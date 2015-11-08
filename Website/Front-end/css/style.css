@@ -36,6 +36,7 @@ small {
     line-height: 40px;
     color: #bb0000;
     display: none;
+    margin-bottom: 16px;
 }
 
 .modal-body {
