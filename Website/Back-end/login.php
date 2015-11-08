@@ -5,29 +5,28 @@
 	{
 		if (session_status() === PHP_SESSION_NONE) session_start();
 
-		if(isset($_GET['user']) && isset($_GET['psw']) && isset($_SESSION['user']) == false &&
-			!empty($_GET['user']) && !empty($_GET['psw'])){
-			echo 'kaasz';
-			if(!preg_match('/[^a-zA-Z]+/', $_GET['user'])){
+		if(isset($_POST['user']) && isset($_POST['psw']) && isset($_SESSION['user']) == false &&
+			!empty($_POST['user']) && !empty($_POST['psw'])){
+			if(!preg_match('/[^a-zA-Z]+/', $_POST['user'])){
 				$info = getConnectionInfo();
 				$conn = new PDO($info[0],$info[1],$info[2]);
 				if($conn != false)
 				{
-					$stmt = $conn->prepare("SELECT * FROM user WHERE username = '".$_GET['user']."'"); 
+					$stmt = $conn->prepare("SELECT * FROM user WHERE username = '".$_POST['user']."'");
 					$stmt->execute(); 
 					$row = $stmt->fetch();
 					if(isset($_SESSION['user']))
 					{
 						echo 'username already set';
 					}
-					if($row['password'] == $_GET['psw'] && $row['username'] == $_GET['user'])
+					if($row['password'] == $_POST['psw'] && $row['username'] == $_POST['user'])
 					{
-						$_SESSION['user'] = $_GET['user'];
-						echo 'Helemaal mooi';
+						$_SESSION['user'] = $_POST['user'];
+						echo 'true';
 					}
 					else
 					{
-						echo 'PASS OF USERNAME VERKEERD';
+						echo 'false';
 						session_destroy();
 					}
 				}
