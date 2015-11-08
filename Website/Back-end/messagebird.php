@@ -24,6 +24,7 @@ function sendMessage($header,$msg,$phone)
 		echo '{"response": "NO_BALANCE"}';
 
 	} catch (\Exception $e) {
-		echo $e->getMessage();
+		echo '{"response": "UNKNOW_ERROR"}';
+		//echo $e->getMessage();
 	}
 }

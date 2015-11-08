@@ -4,9 +4,9 @@
 	function login()
 	{
 		if (session_status() === PHP_SESSION_NONE) session_start();
-				print_r($_SESSION);
+
 		if(isset($_GET['user']) && isset($_GET['psw']) && isset($_SESSION['user']) == false &&
-			!empty($_GET['user']) && !empty($_GET['psw']) && !empty($_SESSION['user'])){
+			!empty($_GET['user']) && !empty($_GET['psw'])){
 			echo 'kaasz';
 			if(!preg_match('/[^a-zA-Z]+/', $_GET['user'])){
 				$info = getConnectionInfo();
@@ -22,16 +22,25 @@
 					}
 					if($row['password'] == $_GET['psw'] && $row['username'] == $_GET['user'])
 					{
-						$_SESSION['user'] = $user;
+						$_SESSION['user'] = $_GET['user'];
 						echo 'Helemaal mooi';
 					}
 					else
 					{
+						echo 'PASS OF USERNAME VERKEERD';
 						session_destroy();
 					}
 				}
 			}
 		}
+		else
+		{
+			echo 'u bent al ingelogd';
+		}
 	}
-	login();
+	
+	function isLoggedIn()
+	{
+		return (isset($_SESSION['user']) && !empty($_SESSION['user']));
+	}
 ?>
