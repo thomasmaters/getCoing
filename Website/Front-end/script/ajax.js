@@ -7,7 +7,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "login.php",
-            data: "name=" + username + "&pwd=" + password,
+            data: "user=" + username + "&pwd=" + password,
             success: function (html) {
                 if (html == 'true') {
                     window.location = "profile.php";
@@ -33,8 +33,9 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "register.php",
-            data: "name=" + username + "&pwd=" + password + "&phone=" + phone + "&email=" + email,
+            data: "user=" + username + "&pwd=" + password + "&phone=" + phone + "&email=" + email,
             success: function (html) {
+                console.log(html);
                 if (html == 'true') {
                     window.location = "profile.php";
                     return true;
